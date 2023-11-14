@@ -1,0 +1,33 @@
+body {
+  background-color: #f8f9fa; /* Cor de fundo leve */
+}
+
+.container {
+  border: 1px solid #ced4da; /* Borda ao redor do container */
+  border-radius: 8px; /* Cantos arredondados */
+  padding: 20px;
+  margin-top: 50px; /* Distância do topo */
+  background-color: #fff; /* Fundo branco */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra leve */
+}
+
+h2 {
+  color: #007bff; /* Cor do título */
+}
+
+button {
+  background-color: #007bff; /* Cor de fundo do botão */
+  color: #fff; /* Cor do texto do botão */
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3; /* Cor de fundo do botão ao passar o mouse */
+}
+
+.alert {
+  margin-top: 20px; /* Distância entre a mensagem e o formulário */
+}

@@ -1,23 +1,13 @@
-# Use a imagem Node.js como base
-FROM node:14
+# Use uma imagem base leve, por exemplo, Nginx
+FROM nginx:alpine
 
-# Defina o diretório de trabalho dentro do container
-WORKDIR /app
+# Copie os arquivos do seu projeto para o diretório padrão do Nginx
+COPY index.html /usr/share/nginx/html
+COPY script.js /usr/share/nginx/html
+COPY styles.css /usr/share/nginx/html
 
-# Copie o arquivo package.json e package-lock.json (se existir) para o diretório de trabalho
-COPY package*.json ./
+# Exponha a porta que o Nginx estará escutando (o padrão é 80)
+EXPOSE 80
 
-# Instale as dependências
-RUN npm install
-
-# Copie o restante dos arquivos do projeto para o diretório de trabalho
-COPY . .
-
-# Construa o projeto
-RUN npm run build
-
-# Exponha a porta em que a aplicação Vite será executada (geralmente 3000)
-EXPOSE 3000
-
-# Comando para iniciar a aplicação quando o container for executado
-CMD ["npm", "run", "dev", "--host"]
+# Comando padrão para iniciar o Nginx
+CMD ["nginx", "-g", "daemon off;"]

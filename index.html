@@ -1,13 +1,51 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React + TS</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <title>Cadastro de Usuário</title>
+</head>
+<body>
+
+  <div class="container mt-5">
+    <h2>Cadastro de Usuário</h2>
+    <form id="cadastroForm">
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" class="form-control" id="username" name="username" aria-describedby="usernameHelp" required>
+        <div class="invalid-feedback" id="usernameHelp">Digite um username válido.</div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+        <div class="invalid-feedback" id="emailHelp">Digite um email válido.</div>
+      </div>
+      <div class="form-group">
+        <label for="nome">Nome:</label>
+        <input type="text" class="form-control" id="nome"  name="nome" aria-describedby="nomeHelp" required>
+        <div class="invalid-feedback" id="nomeHelp">Digite um nome válido.</div>
+      </div>
+      <div class="form-group">
+        <label for="sobrenome">Sobrenome:</label>
+        <input type="text" class="form-control" id="sobrenome" name="sobrenome" aria-describedby="sobrenomeHelp" required>
+        <div class="invalid-feedback" id="sobrenomeHelp">Digite um sobrenome válido.</div>
+      </div>
+      <div class="form-group">
+        <label for="password">Senha:</label>
+        <input type="password" class="form-control" id="password" name="password" aria-describedby="passwordHelp" required>
+        <div class="invalid-feedback" id="passwordHelp">Digite uma senha válida.</div>
+      </div>
+      <button type="button" name="btnCadastrar" class="btn btn-primary" onclick="validarCampos()">Cadastrar</button>
+    </form>
+    <div id="mensagem" class="mt-3"></div>
+  </div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<script src="script.js"></script>
+
+</body>
 </html>
