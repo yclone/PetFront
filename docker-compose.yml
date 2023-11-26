@@ -1,9 +1,0 @@
-version: '3'
-services:
-  app:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    ports:
-      - "8000:8000"
-      - "5173:5173"  # Adicione esta linha para mapear a porta 5173 para o host
